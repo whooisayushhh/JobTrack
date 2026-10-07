@@ -3,5 +3,15 @@
         "company": "Google",
         "position": "Python Development",
         "status": "Interview"
+    },
+    {
+        "company": "Microsoft",
+        "position": "Software Engineer",
+        "status": "Interview"
+    },
+    {
+        "company": "TCS",
+        "position": "Data analyst",
+        "status": "Selected"
     }
 ]
