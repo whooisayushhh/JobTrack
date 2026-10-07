@@ -1,22 +1,30 @@
 [
     {
-        "company": "Google",
-        "position": "Python Development",
-        "status": "Rejected"
-    },
-    {
         "company": "Microsoft",
         "position": "Software Engineer",
+        "location": "Not specified",
+        "application_date": "Not specified",
         "status": "Interview"
     },
     {
         "company": "TCS",
         "position": "Data analyst",
+        "location": "Not specified",
+        "application_date": "Not specified",
         "status": "Selected"
     },
     {
         "company": "Wipro",
         "position": "Fronten Developer",
+        "location": "Not specified",
+        "application_date": "Not specified",
         "status": "Applied"
+    },
+    {
+        "company": "Google",
+        "position": "Python Developer",
+        "location": "Kolkata",
+        "application_date": "07-10-2026",
+        "status": "Interview"
     }
 ]

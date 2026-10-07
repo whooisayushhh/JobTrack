@@ -14,7 +14,23 @@ def load_jobs():
     with open(DATA_FILE, "r") as file:
         data = json.load(file)
 
-    return [Job.from_dict(job) for job in data]
+    jobs = []
+
+    for job in data:
+        location = job.get("location", "Not specified")
+        application_date = job.get("application_date", "Not specified")
+
+        jobs.append(
+            Job(
+                job["company"],
+                job["position"],
+                location,
+                application_date,
+                job.get("status", "Applied")
+            )
+        )
+
+    return jobs
 
 
 def save_jobs(jobs):
@@ -116,9 +132,22 @@ def main():
         if choice == "1":
             company = input("Enter company name: ")
             position = input("Enter job position: ")
+            location = input("Enter job location: ")
+
+            application_date = input(
+                "Enter application date (DD-MM-YYYY): "
+            )
+
             status = input("Enter application status: ")
 
-            job = Job(company, position, status)
+            job = Job(
+                company,
+                position,
+                location,
+                application_date,
+                status
+            )
+
             jobs.append(job)
 
             save_jobs(jobs)
@@ -158,6 +187,7 @@ def main():
                     save_jobs(jobs)
 
                     print("\nStatus updated successfully! ✅")
+
                 else:
                     print("\nInvalid job number.")
 
@@ -187,6 +217,7 @@ def main():
                         f"\n{deleted_job.company} - "
                         f"{deleted_job.position} deleted successfully! 🗑️"
                     )
+
                 else:
                     print("\nInvalid job number.")
 
