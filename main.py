@@ -19,6 +19,9 @@ def load_jobs():
     for job in data:
         location = job.get("location", "Not specified")
         application_date = job.get("application_date", "Not specified")
+        salary = job.get("salary", "Not specified")
+        job_type = job.get("job_type", "Not specified")
+        work_mode = job.get("work_mode", "Not specified")
 
         jobs.append(
             Job(
@@ -26,6 +29,9 @@ def load_jobs():
                 job["position"],
                 location,
                 application_date,
+                salary,
+                job_type,
+                work_mode,
                 job.get("status", "Applied")
             )
         )
@@ -138,6 +144,15 @@ def main():
                 "Enter application date (DD-MM-YYYY): "
             )
 
+            salary = input("Enter salary: ")
+            job_type = input(
+                "Enter job type (Full-time/Internship/Part-time): "
+            )
+
+            work_mode = input(
+                "Enter work mode (Remote/Hybrid/On-site): "
+            )
+
             status = input("Enter application status: ")
 
             job = Job(
@@ -145,6 +160,9 @@ def main():
                 position,
                 location,
                 application_date,
+                salary,
+                job_type,
+                work_mode,
                 status
             )
 

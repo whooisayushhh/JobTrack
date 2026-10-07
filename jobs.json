@@ -4,6 +4,9 @@
         "position": "Software Engineer",
         "location": "Not specified",
         "application_date": "Not specified",
+        "salary": "Not specified",
+        "job_type": "Not specified",
+        "work_mode": "Not specified",
         "status": "Interview"
     },
     {
@@ -11,6 +14,9 @@
         "position": "Data analyst",
         "location": "Not specified",
         "application_date": "Not specified",
+        "salary": "Not specified",
+        "job_type": "Not specified",
+        "work_mode": "Not specified",
         "status": "Selected"
     },
     {
@@ -18,6 +24,9 @@
         "position": "Fronten Developer",
         "location": "Not specified",
         "application_date": "Not specified",
+        "salary": "Not specified",
+        "job_type": "Not specified",
+        "work_mode": "Not specified",
         "status": "Applied"
     },
     {
@@ -25,6 +34,19 @@
         "position": "Python Developer",
         "location": "Kolkata",
         "application_date": "07-10-2026",
+        "salary": "Not specified",
+        "job_type": "Not specified",
+        "work_mode": "Not specified",
         "status": "Interview"
+    },
+    {
+        "company": "Microsoft",
+        "position": "Python Developer",
+        "location": "Bangalore",
+        "application_date": "10-10-2026",
+        "salary": "8 LPA",
+        "job_type": "Full-time",
+        "work_mode": "Hybrid",
+        "status": "Applied"
     }
 ]
