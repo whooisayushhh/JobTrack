@@ -36,16 +36,34 @@ def search_jobs(jobs):
     print("\n===== Search Results =====")
 
     for number, job in enumerate(jobs, start=1):
-        if (
-            keyword in job.company.lower()
-            or keyword in job.position.lower()
-        ):
+        if keyword in job.company.lower() or keyword in job.position.lower():
             print(f"\nJob {number}")
             job.display()
             found = True
 
     if not found:
         print("\nNo matching jobs found.")
+
+
+def filter_by_status(jobs):
+    if not jobs:
+        print("\nNo jobs available.")
+        return
+
+    status = input("\nEnter status to filter: ").lower()
+
+    found = False
+
+    print("\n===== Filter Results =====")
+
+    for number, job in enumerate(jobs, start=1):
+        if job.status.lower() == status:
+            print(f"\nJob {number}")
+            job.display()
+            found = True
+
+    if not found:
+        print("\nNo jobs found with that status.")
 
 
 def main():
@@ -59,7 +77,8 @@ def main():
         print("3. Update Status")
         print("4. Delete Job")
         print("5. Search Jobs")
-        print("6. Exit")
+        print("6. Filter by Status")
+        print("7. Exit")
 
         choice = input("Enter your choice: ")
 
@@ -150,8 +169,12 @@ def main():
         elif choice == "5":
             search_jobs(jobs)
 
-        # Exit
+        # Filter Jobs by Status
         elif choice == "6":
+            filter_by_status(jobs)
+
+        # Exit
+        elif choice == "7":
             print("\nThank you for using JobTrack! 👋")
             break
 
