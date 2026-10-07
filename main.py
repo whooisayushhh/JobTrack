@@ -32,7 +32,8 @@ def main():
     while True:
         print("\n1. Add Job")
         print("2. View Jobs")
-        print("3. Exit")
+        print("3. Update Status")
+        print("4. Exit")
 
         choice = input("Enter your choice: ")
 
@@ -59,6 +60,34 @@ def main():
                     job.display()
 
         elif choice == "3":
+            if not jobs:
+                print("\nNo jobs available to update.")
+                continue
+
+            print("\n===== Select Job =====")
+
+            for number, job in enumerate(jobs, start=1):
+                print(f"{number}. {job.company} - {job.position}")
+
+            try:
+                job_number = int(input("\nEnter job number: "))
+
+                if 1 <= job_number <= len(jobs):
+                    new_status = input("Enter new status: ")
+
+                    jobs[job_number - 1].status = new_status
+
+                    save_jobs(jobs)
+
+                    print("\nStatus updated successfully! ✅")
+
+                else:
+                    print("\nInvalid job number.")
+
+            except ValueError:
+                print("\nPlease enter a valid number.")
+
+        elif choice == "4":
             print("\nThank you for using JobTrack! 👋")
             break
 
