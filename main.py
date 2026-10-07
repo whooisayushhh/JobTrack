@@ -66,6 +66,35 @@ def filter_by_status(jobs):
         print("\nNo jobs found with that status.")
 
 
+def show_dashboard(jobs):
+    total = len(jobs)
+
+    applied = 0
+    interview = 0
+    selected = 0
+    rejected = 0
+
+    for job in jobs:
+        status = job.status.lower()
+
+        if status == "applied":
+            applied += 1
+        elif status == "interview":
+            interview += 1
+        elif status == "selected":
+            selected += 1
+        elif status == "rejected":
+            rejected += 1
+
+    print("\n===== JobTrack Dashboard =====")
+
+    print(f"\nTotal Applications: {total}")
+    print(f"Applied: {applied}")
+    print(f"Interview: {interview}")
+    print(f"Selected: {selected}")
+    print(f"Rejected: {rejected}")
+
+
 def main():
     jobs = load_jobs()
 
@@ -78,7 +107,8 @@ def main():
         print("4. Delete Job")
         print("5. Search Jobs")
         print("6. Filter by Status")
-        print("7. Exit")
+        print("7. Dashboard")
+        print("8. Exit")
 
         choice = input("Enter your choice: ")
 
@@ -128,7 +158,6 @@ def main():
                     save_jobs(jobs)
 
                     print("\nStatus updated successfully! ✅")
-
                 else:
                     print("\nInvalid job number.")
 
@@ -158,7 +187,6 @@ def main():
                         f"\n{deleted_job.company} - "
                         f"{deleted_job.position} deleted successfully! 🗑️"
                     )
-
                 else:
                     print("\nInvalid job number.")
 
@@ -169,16 +197,19 @@ def main():
         elif choice == "5":
             search_jobs(jobs)
 
-        # Filter Jobs by Status
+        # Filter by Status
         elif choice == "6":
             filter_by_status(jobs)
 
-        # Exit
+        # Dashboard
         elif choice == "7":
+            show_dashboard(jobs)
+
+        # Exit
+        elif choice == "8":
             print("\nThank you for using JobTrack! 👋")
             break
 
-        # Invalid Choice
         else:
             print("\nInvalid choice. Please try again.")
 

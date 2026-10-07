@@ -13,5 +13,10 @@
         "company": "TCS",
         "position": "Data analyst",
         "status": "Selected"
+    },
+    {
+        "company": "Wipro",
+        "position": "Fronten Developer",
+        "status": "Applied"
     }
 ]
