@@ -2,14 +2,16 @@ from app.models import Job
 
 
 def main():
-    job1 = Job("Google", "Python Developer")
-    job2 = Job("Microsoft", "Software Engineer", "Interview")
+    print("===== JobTrack =====")
 
-    print("===== JobTrack =====\n")
+    company = input("Enter company name: ")
+    position = input("Enter job position: ")
+    status = input("Enter application status: ")
 
-    job1.display()
-    print()
-    job2.display()
+    job = Job(company, position, status)
+
+    print("\n===== Job Details =====")
+    job.display()
 
 
 if __name__ == "__main__":
