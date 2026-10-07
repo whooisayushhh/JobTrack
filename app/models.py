@@ -8,3 +8,18 @@ class Job:
         print(f"Company: {self.company}")
         print(f"Position: {self.position}")
         print(f"Status: {self.status}")
+
+    def to_dict(self):
+        return {
+            "company": self.company,
+            "position": self.position,
+            "status": self.status
+        }
+
+    @staticmethod
+    def from_dict(data):
+        return Job(
+            data["company"],
+            data["position"],
+            data["status"]
+        )
