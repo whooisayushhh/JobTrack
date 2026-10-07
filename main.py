@@ -1,13 +1,16 @@
 from app.models import Job
 
-job1 = Job(
-    "Google",
-    "Python Developer Intern",
-    "Applied",
-    "Bangalore"
-)
 
-print(job1.company)
-print(job1.role)
-print(job1.status)
-print(job1.location)
+def main():
+    job1 = Job("Google", "Python Developer")
+    job2 = Job("Microsoft", "Software Engineer", "Interview")
+
+    print("===== JobTrack =====\n")
+
+    job1.display()
+    print()
+    job2.display()
+
+
+if __name__ == "__main__":
+    main()

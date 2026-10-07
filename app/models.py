@@ -1,6 +1,10 @@
 class Job:
-    def __init__(self, company, role, status, location):
+    def __init__(self, company, position, status="Applied"):
         self.company = company
-        self.role = role
+        self.position = position
         self.status = status
-        self.location = location
+
+    def display(self):
+        print(f"Company: {self.company}")
+        print(f"Position: {self.position}")
+        print(f"Status: {self.status}")
