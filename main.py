@@ -33,7 +33,8 @@ def main():
         print("\n1. Add Job")
         print("2. View Jobs")
         print("3. Update Status")
-        print("4. Exit")
+        print("4. Delete Job")
+        print("5. Exit")
 
         choice = input("Enter your choice: ")
 
@@ -88,6 +89,35 @@ def main():
                 print("\nPlease enter a valid number.")
 
         elif choice == "4":
+            if not jobs:
+                print("\nNo jobs available to delete.")
+                continue
+
+            print("\n===== Delete Job =====")
+
+            for number, job in enumerate(jobs, start=1):
+                print(f"{number}. {job.company} - {job.position}")
+
+            try:
+                job_number = int(input("\nEnter job number to delete: "))
+
+                if 1 <= job_number <= len(jobs):
+                    deleted_job = jobs.pop(job_number - 1)
+
+                    save_jobs(jobs)
+
+                    print(
+                        f"\n{deleted_job.company} - "
+                        f"{deleted_job.position} deleted successfully! 🗑️"
+                    )
+
+                else:
+                    print("\nInvalid job number.")
+
+            except ValueError:
+                print("\nPlease enter a valid number.")
+
+        elif choice == "5":
             print("\nThank you for using JobTrack! 👋")
             break
 
